@@ -100,7 +100,7 @@
 </header>  
  
 {% block crumbs %}
-<nav class="breadcrumb breadbar px-5 py-4" style ="text-transform: capitalize;" aria-label="breadcrumbs">
+<nav class="breadcrumb breadbar px-5 py-4 mt-5 is-hidden-mobile" style ="text-transform: capitalize;" aria-label="breadcrumbs">
 <div class="is-flex is-justify-content-space-between">
   {% if breadcrumbs %}  
       {% include "dynamic_breadcrumbs/breadcrumbs.html" with breadcrumbs=breadcrumbs %} 

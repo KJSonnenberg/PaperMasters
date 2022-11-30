@@ -2,11 +2,11 @@
 {% load static %}  
 
 {% block back-style %}
-<section class="section is-small mt-5" style="background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/resource-header.webp'); background-repeat: no-repeat; background-size: cover;">
+<section class="section is-small mt-5 is-hidden-mobile" style="background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/resource-header.webp'); background-repeat: no-repeat; background-size: cover;">
   {% endblock back-style %} 
 
 {% block crumbs %}
-<nav class="breadcrumb breadbar px-5 py-4" style ="text-transform: capitalize;" aria-label="breadcrumbs">
+<nav class="breadcrumb breadbar px-5 py-4 is-hidden-mobile" style ="text-transform: capitalize;" aria-label="breadcrumbs">
   {% if breadcrumbs %}  
       {% include "dynamic_breadcrumbs/breadcrumbs.html" with breadcrumbs=breadcrumbs %} 
   {% endif %}  
