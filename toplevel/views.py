@@ -11,6 +11,9 @@ def prices(request):
 def terms_service(request):
     return render(request, 'toplevel/terms-service.html') 
 
+def return_policy(request):
+    return render(request, 'toplevel/terms-service.html') 
+
 def contact(request):
     return render(request, 'toplevel/contact.html') 
 
