@@ -1,22 +1,35 @@
-"""azureproject URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
-from django.urls import include, path
+from django.conf.urls.static import static
+admin.autodiscover()
+from django.urls import path, include
+from django.urls import re_path as url
+from django.contrib.sitemaps.views import sitemap
+from topic_pages.sitemaps import *
+#from . import views
+
+# To add a new path, first import the app:
+# import blog
+#
+# Then add the new path:
+# path('blog/', blog.urls, name="blog")
+#
+# Learn more here: https://docs.djangoproject.com/en/2.1/topics/http/urls/
+
+sitemaps={ 
+    'static': StaticViewSitemap,
+    'resourcemap': ResourceSitemap,
+    'servicemap': ServiceSitemap, 
+    'subjectmap': SubtopicSitemap,
+    'pagemap': PageSitemap,
+}
 
 urlpatterns = [
-    path('', include('restaurant_review.urls')),
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),    
+    path('resources/', include('resources.urls')),
+    path('services/', include('servicepages.urls')),
+    path('', include('papermasters.urls')),
+    path('', include('toplevel.urls')),
+    path('', include('topic_pages.urls')),
+    
 ]

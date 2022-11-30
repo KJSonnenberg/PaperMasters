@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/dfe11bdf-a2c1-465a-ad4f-98b14eced5ff/AppServices/subscriptions/dfe11bdf-a2c1-465a-ad4f-98b14eced5ff/resourceGroups/NovEmergency/providers/Microsoft.Web/sites/papermasters",
+    "appService.deploySubpath": "."
+}
