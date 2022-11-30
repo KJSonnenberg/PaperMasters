@@ -1,0 +1,28 @@
+{% extends "papermasters/base.html" %}
+{% load static %}  
+
+{% block meta %}
+<title>Business Research Paper Topic Suggestions</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Business and MBA research paper topic suggestions in accounting, advertising, administration, law, theory, case studies, communications, company profiles, eCommerce, ethics and much more." />
+{% endblock meta %}  
+
+{% block back-style %}
+<section class="section is-small" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/business-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}  
+
+  {% block content %} 
+  <h1>Business Research Paper Topics</h1>
+  <p>Business and MBA research paper topics offer the opportunity for students to find the perfect topic for a research paper or capstone project. 
+    Below there are hundreds of topics to choose from ranging from accounting, management, international business, business law and many more. 
+    Don't see what you need here? Call us and we will help you formulate the best business or MBA research project you've ever read.</p>
+
+  <h3 class="mb-5 is-size-4 is-size-3-mobile has-text-weight-bold has-text-centered">Research Paper Topic Suggestions on Business</h3>
+  <div class="optimShadBox conStyle has-text-grey-dark has-background-white-ter">
+    <div>{% for x in bus_list %}  
+      <p><strong><a href= "{{ x.slug }}">{{ x.name }}</a></strong> - {{ x.meta_description }}</p>
+      {% endfor %}
+      </div> 
+      </div>
+  {% endblock content %}

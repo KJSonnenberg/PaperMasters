@@ -1,0 +1,41 @@
+{% extends "papermasters/base.html" %}
+{% load static %}  
+
+{% block meta %}
+<title>Anthropology Research Paper Topics</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Paper Masters provides anthropology research paper topics such as cultural anthropology, African Civilizations, Ancient civilizations, the stone age, American culture and cultures around the world to help students." />
+{% endblock meta %}  
+
+{% block back-style %}
+<section class="section is-small" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/anthropology-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}  
+
+  {% block content %} 
+  <h1>Research Paper Topics on Anthropology</h1>
+           <p><strong><em>Anthropology</em></strong> research papers explore human beings and their ways of living from a bi-cultural perspective. 
+            Research papers on anthropology approach the topic from a variety of different ways. 
+            Paper Masters has anthropology writers available to write your anthropology paper on any of the several disciplines of anthropology. 
+            We can writer your paper to any specifications you need or you can use one of our anthropology research paper topics below to have our writers construct you a custom paper. 
+            Anything you need, Paper Masters is here to help. </p>
+           <h2>What is Anthropology?</h2> 
+           <ol>
+             <li><em>Physical or biological</em> anthropology</li>
+             <li><em>Archaeology</em></li>
+             <li><em>Cultural or sociocultural</em> anthropology,</li>
+             <li><em>Anthropological linguistics</em></li>
+           </ol>
+           <p><em>Applied anthropology</em> is the practical application of anthropological principles, theories, and methodologies to solve contemporary problems.</p>
+        <p>A key concept in Cultural Anthropology is <strong><em>Culture</em></strong>. 
+          Every society has a distinctive culture, which is unique in its view of the world, rules of moral conduct and patterns of social interactions. 
+          <em>Culture</em> has been defined in an infinite number of ways. 
+          The ultimate goal of anthropology is to find a fully encompassing and functional definition that separates culture from other closely related terms such as <em>society</em>.</p>
+  <h3 class="mb-5 is-size-4 is-size-3-mobile has-text-weight-bold has-text-centered">Research Paper Topic Suggestions on Anthropology</h3>
+  <div class="optimShadBox conStyle has-text-grey-dark has-background-white-ter">
+    <div>{% for x in ant_list %}  
+      <p><strong><a href= "{{ x.slug }}">{{ x.name }}</a></strong> - {{ x.meta_description }}</p>
+      {% endfor %}
+      </div> 
+      </div>
+  {% endblock content %}

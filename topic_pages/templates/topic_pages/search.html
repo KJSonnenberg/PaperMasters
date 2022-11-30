@@ -1,0 +1,66 @@
+{% extends "papermasters/base.html" %}
+{% load static %}  
+
+{% block back-style %}
+<section class="section is-small mt-5" style="background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/resource-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %} 
+
+{% block crumbs %}
+<nav class="breadcrumb breadbar px-5 py-4" style ="text-transform: capitalize;" aria-label="breadcrumbs">
+  {% if breadcrumbs %}  
+      {% include "dynamic_breadcrumbs/breadcrumbs.html" with breadcrumbs=breadcrumbs %} 
+  {% endif %}  
+</nav> {% endblock crumbs %} 
+
+{% block content%}
+
+    
+    <ul>
+        {% if searched %}
+          
+        <h1 class="is-size-5">Search - Results for "{{ searched }}"<h1>
+            <div class="field has-addons">
+                <div class="control is-expanded">
+                  <form class="d-flex" method="POST" action="{% url 'topic_pages:search_view' %}">
+                    {% csrf_token %}
+                  <input class="input is-primary" type="search" placeholder="Search Topics" aria-label="Search" name="searched">
+                </div>
+                <div class="control">
+                  <button class="button is-primary has-text-dark" type="submit">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" style="width: 24px;height: 24px">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                  </button> 
+                </form>
+              </div>  
+              </div> 
+            
+            {% for topic in topics %}
+
+            <ul>
+                <li><a href="{% url 'topic_pages:category' topic.new_url %}"> {{ topic }}</a> - {{ topic.meta_description }}</li>
+            </ul>
+
+            {% endfor %}
+
+        {% else %}
+
+   <h1 class="is-size-5">Paper Masters Site Search</h1>
+   <div class="field has-addons">
+    <div class="control is-expanded">
+      <form class="d-flex" method="POST" action="{% url 'topic_pages:search_view' %}">
+        {% csrf_token %}
+      <input class="input is-primary" type="search" placeholder="Search Topics" aria-label="Search" name="searched">
+    </div>
+    <div class="control">
+      <button class="button is-primary has-text-dark" type="submit">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24" stroke="currentColor" style="width: 24px;height: 24px">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      </button> 
+    </form>
+  </div>  
+  </div> 
+
+   {% endif %}
+{% endblock content %}

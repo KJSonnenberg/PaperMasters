@@ -1,0 +1,37 @@
+{% extends "papermasters/base.html" %}
+{% load static %}  
+{% load mptt_tags %}
+
+{% block back-style %}<section class="section is-small mt-5" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/subject-header.webp'); background-repeat: no-repeat; background-size: cover;">{% endblock back-style %} 
+
+
+  {% block content %} 
+  <div><h2>{{ instance.name }}</h2></div>
+  <div class="p-2">{{ instance.content|safe }}</div>
+  
+  {% if  instance.children.all %}  
+          <div class="columns">
+            <div class="column optimShadBox conStyle has-text-grey-dark has-background-white-ter p-6">
+              <h3 class="mb-5 is-size-4 is-size-5-mobile has-text-weight-bold has-text-centered">Research Paper Topic Suggestions on {{instance.name}}</h3>
+            {% for i in instance.children.all %}
+                <div><p><a href="{{ i.slug }}"> {{ i.name }}</a> - 
+                  {{ i.meta_description }}</p></div>
+            {% endfor %}
+        </div> 
+      </div> 
+
+        {% endif %}
+        
+        {% if  instance.post_set.all %} 
+        <div class="columns">
+          <div class="column optimShadBox conStyle has-text-grey-dark has-background-white-ter p-6">
+            <h3 class="mb-5 is-size-4 is-size-5-mobile has-text-weight-bold has-text-centered">Research Paper Topic Suggestions on {{instance.name}}</h3>
+         {% for i in instance.post_set.all %}  
+            <div><p><a href="{{ i.slug }}">
+              {{ i.title | truncatechars:30}}</a> - 
+              {{ i.meta_description | safe | truncatechars_html:250 }}</p></div>
+        {% endfor %}
+      </div>
+    </div> 
+        {% endif %} 
+  {% endblock content %}  

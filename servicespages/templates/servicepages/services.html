@@ -1,0 +1,30 @@
+{% extends "papermasters/base.html" %}
+{% load static %}
+
+{% block back-style %}
+<section class="section is-small" style="background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/service-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %} 
+
+
+  {% block content %} 
+  {% comment %} <div><h1>{{ servicing.title }}</h1></div>  {% endcomment %}
+  <div class="p-2">{{ servicing.content|safe }}</div>
+  <div class="columns">
+    <div class="column optimShadBox conStyle has-text-grey-dark has-background-white-ter p-6">
+      <h3 class="mb-5 is-size-4 is-size-5-mobile has-text-weight-bold has-text-centered">Related Research Paper Topic Suggestions</h3>
+       
+            
+  {% for service in service %}  
+  <p class="pt-2">
+  <a href="{{ service.get_absolute_url }}">{{ service.title }}
+  </a> - {{ service.meta_description }}</p> 
+  <div>{% for tag in service.service_tags.all %}
+    <span class="tag">• {{ tag }}</span>
+    {% empty %}
+  No related research paper suggestions.
+    {% endfor %} 
+  </div> 
+  {% endfor %}  <br>
+  </div>  
+        </div> 
+      {% endblock content %} 

@@ -41,14 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "django.contrib.admin",
-    "django.contrib.auth",
     "django.contrib.sitemaps", # Sitemap
     "django.contrib.sites", # Sitemap
-    "django.contrib.contenttypes",
-    "django.contrib.sessions",
-    "django.contrib.messages",
-    "django.contrib.staticfiles",
     "django.contrib.redirects",
     "mptt",
     "dynamic_breadcrumbs",

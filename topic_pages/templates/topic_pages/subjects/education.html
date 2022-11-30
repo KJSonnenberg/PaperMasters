@@ -1,0 +1,27 @@
+{% extends "papermasters/base.html" %}
+{% load static %}  
+
+{% block meta %}
+<title>Education Research Paper Topic Suggestions</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Education research paper topics offer education majors a choice of samples on how to write projects on administration, classroom management, curriculum development, early childhood education, elementary education, philosophy of education, children with special needs, and education theories." />
+{% endblock meta %}  
+
+{% block back-style %}
+<section class="section is-small" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/education-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}  
+
+  {% block content %} 
+  <h1>Education Research Papers</h1> 
+  <p>Education research paper topics offer education majors a choice of samples on how to write projects ranging from Adult Learning Theories to Early Education Literacy. 
+    Administrative topics, classroom management, curriculum development, early childhood education, elementary eduction, the philosophy of education, the education of special needs students and education theory are just a few of the broad categories Paper Masters offer topics in. </p>
+
+  <h3 class="mb-5 is-size-4 is-size-3-mobile has-text-weight-bold has-text-centered">Research Paper Topic Suggestions on Education</h3>
+  <div class="optimShadBox conStyle has-text-grey-dark has-background-white-ter">
+    <div>{% for x in edu_list %}  
+      <p><strong><a href= "{{ x.slug }}">{{ x.name }}</a></strong> - {{ x.meta_description }}</p>
+      {% endfor %}
+      </div> 
+      </div>
+  {% endblock content %}

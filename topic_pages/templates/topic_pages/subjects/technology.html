@@ -1,0 +1,28 @@
+{% extends "papermasters/base.html" %}
+{% load static %}  
+
+{% block meta %}
+<title>Technology Research Papers</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Paper Masters custom writes Technology and computer science research papers custom written on topics such as advances in technology, computers and the Internet and technology and society." />
+{% endblock meta %}  
+
+{% block back-style %}
+<section class="section is-small" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/technology-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}  
+
+  {% block content %} 
+  <h1>Technology and Computer Science Research Paper Topics</h1>
+  <p><strong>Paper Masters shows you how</strong> to write a research paper on technology and computer science using the suggestions you see on this web site page. 
+    Our technology topic suggestions can be used to create unique ideas for your own research papers on advances in technology, computers and the Internet and technology and society. 
+    Paper Masters is here to help you with any topic with the use of our awesome repository of research paper ideas.</p>
+  
+  <h3 class="mb-5 is-size-4 is-size-3-mobile has-text-weight-bold has-text-centered">Research Paper Topic Suggestions on Technology</h3>
+  <div class="optimShadBox conStyle has-text-grey-dark has-background-white-ter">
+    <div>{% for x in tec_list %}  
+      <p><strong><a href= "{{ x.slug }}">{{ x.name }}</a></strong> - {{ x.meta_description }}</p>
+      {% endfor %}
+      </div> 
+      </div>
+  {% endblock content %}

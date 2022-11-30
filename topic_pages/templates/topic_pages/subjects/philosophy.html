@@ -1,0 +1,30 @@
+{% extends "papermasters/base.html" %}
+{% load static %}  
+
+{% block meta %}
+<title>Philosophy Research Papers</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Philosophy research papers can be custom written for you on philosophical concepts, philosophers and philosophical works." />
+{% endblock meta %}  
+
+{% block back-style %}
+<section class="section is-small" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/philosophy-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}  
+
+  {% block content %} 
+  <h1>Philosophy Research Papers Custom Written For You</h1>
+  <p>Philosophy research papers can be custom written for you by Paper Masters. 
+    Often times it is difficult to come up with original ideas for philosophy projects. 
+    <strong>Professors of philosophy expect great things from students and starting your research paper can be the most difficult thing.
+    </strong> The philosophy topics you see below will help you get your research paper started and on the right track.</p>
+  <p><strong>Can't get your paper done in time or don't have a topic? Have Paper Masters Custom write your paper for you!</strong></p>
+
+  <h3 class="mb-5 is-size-4 is-size-3-mobile has-text-weight-bold has-text-centered">Research Paper Topic Suggestions on Philosophy</h3>
+  <div class="optimShadBox conStyle has-text-grey-dark has-background-white-ter">
+    <div>{% for x in phi_list %}  
+      <p><strong><a href= "{{ x.slug }}">{{ x.name }}</a></strong> - {{ x.meta_description }}</p>
+      {% endfor %}
+      </div> 
+      </div>
+  {% endblock content %}

@@ -1,0 +1,44 @@
+{% extends "papermasters/base.html" %}
+{% load static %}
+
+{% block back-style %}
+<section class="section is-small mt-5" style="background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/resource-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}  
+
+  {% block content %} 
+<h1>Writing Resources</h1>
+<p>Academic writing that is research based is the specialty of Paper Masters. With over 25 years as the premier academic writing company worldwide, our writers know every type of research and writing that a college student might need. We specialize in Undergraduate, Graduate, and Master’s level writing with an emphasis on quality, up-to-date source material.</p>
+
+<p>Paper Masters will help you learn about all types of research. Below are a just some of our areas of expertise. Learn more about the following:
+
+<!--- ((((. Insert resources writing links ))))) -->
+</p>
+
+
+<p>Our writers make certain your custom research paper conforms exactly to your thesis. This means it clearly presents supporting research and academic sources that come together in a well-written research project.</p>
+<p>Each Research Paper Includes:</p>
+<li>Delivered as a Microsoft Word Document .doc</li>
+<li>12 pt. Courier New Font with 1" margins</li>
+<li>Free Reference Page</li>
+<li>In-text citation of current and relevant resource material</li>
+<li>Proper formatting in MLA, APA or whichever citation style you choose</li>
+
+<p><b>Custom writing is when a writer is hired to write material that is original and customized</b> to specific instructions. The following are all elements of custom writing that are extremely important: 
+<li>Original writing</li>
+<li>Written according to specific instructions</li>
+<li>Unique and up-to-date source material</li>
+</p>
+
+<h2>Why Paper Masters Only Does Custom Writing</h2>
+<p>25 years ago, when Paper Masters first started, we wanted to be different. We wanted to provide custom research that was original and that students could learn from. Custom writing is a fantastic learning tool that teaches you about your specific topic. You will also learn how to cite your project correctly and what sources are the most informative on your specific academic subject.</p>
+<p>Paper Masters believes in teaching through example. We provide custom written research projects to use as a guide in your own writing. <b>Custom writing is the only type of research paper you should ever buy.</b></p>
+
+<div class="columns">
+<div class="column optimShadBox conStyle has-text-grey-dark has-background-white-ter p-6">
+  <h3 class="mb-5 is-size-4 is-size-5-mobile has-text-weight-bold has-text-centered">More Research Writing Resources</h3>
+{% for l in resource_list %}
+<div><a href= "{{ l.slug }}">{{ l.title }}</a> - {{ l.meta_description }}</div>
+{% endfor %} 
+</div>
+</div>
+{% endblock content %}

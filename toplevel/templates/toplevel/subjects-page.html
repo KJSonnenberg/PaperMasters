@@ -1,0 +1,29 @@
+{% extends "papermasters/base.html" %}
+{% load static %}
+
+{% block meta %}
+<title>Research Paper Topics from Paper Masters</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Research paper topic suggestions from Paper Masters help students get a great start on research paper topics  such as anthropology, art, business, criminal justice, education, business, literature, nursing, medical health, philosophy, political science, religion, sociology, history and many more.">  
+{% endblock meta %}    
+
+{% block back-style %}
+<section class="section is-small mt-5" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/subjectpage-header.webp'); background-repeat: no-repeat; background-size: cover;">
+{% endblock back-style %} 
+
+  {% block content %} 
+              <!--Start Content for subject page-->
+              <h1>Research Paper Topics</h1> 
+              <p>Need help choosing a topic for your research paper? 
+                Take any of these research paper topics and descriptions and tailor it to your own needs. 
+                Be as general or specific as you like! 
+                From English 101 papers to Advanced Psychology, Education, Biology, Literature, Nursing, Sociology and many more. 
+                Paper Masters is here to make it easy on you!</p> 
+
+              <h2>Thousands of Topics to Choose From - Start with your Subject!</h2> 
+                 {% for x in subject_list %}
+                 <div><p><a href="{% url 'topic_pages:category' x.new_url %}"> {{ x.name }}</a> - 
+                  {{ x.meta_description }}</p></div>
+                 {% endfor%} 
+        {% endblock content %}

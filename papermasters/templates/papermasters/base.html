@@ -1,0 +1,367 @@
+{% load static %}  
+<!DOCTYPE html>
+<html lang="en">
+  <head>{% block meta %} 
+    <meta charset="utf-8">
+    <title>{{ instance.meta_title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="{{ instance.meta_description }}">{% endblock meta %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bulma.min.css' %}">
+    {% block meta-add %}{% endblock meta-add %}  
+    <script src="https://kit.fontawesome.com/9b8522e735.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="{% static 'favicon.icon' %}">
+    <script src="{% static 'js/main.js' %}"></script>{% block js-add %}{% endblock js-add %}  
+    <meta name="google-site-verification" content="68SFwjLkdmv-QYy5XT-zDZkncLLKRRkMqoyCSnaRa50" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-2687646-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-2687646-1');
+</script>
+  </head>
+  <body class="has-navbar-fixed-top">
+
+<header> 
+  <nav class="navbar px-3 py-4 is-fixed-top" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{% url 'papermasters:home' %}">
+        <img class="image" src= "{% static 'images/logo-papermasters-navbar.svg' %}" alt="PaperMasters Logo" width="180px" height="200px">
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target=“pmNav”>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span> 
+      </a> 
+  </div>
+    <div id="pmNav" class="navbar-menu" style="font-size: .95em;">
+        <div class="navbar-end"> 
+        <a class="navbar-item" href="{% url 'papermasters:home' %}">
+          Home</a>
+        <a class="navbar-item" href="{% url 'toplevel:about_us' %}">
+          About</a>
+        <a class="navbar-item" href="{% url 'toplevel:contact' %}">
+          Contact</a>
+          <a class="navbar-item" href="{% url 'toplevel:prices' %}">
+            Prices</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              Writing
+            </a> 
+            <div class="navbar-dropdown is-right">
+              <a class="navbar-item" href="{% url 'toplevel:service_page' %}">
+                Services</a>
+              <a class="navbar-item" href="{% url 'toplevel:resources_page' %}">
+                Writing Resources</a>
+              <a class="navbar-item" href="{% url 'toplevel:subjects_page' %}">
+                Subjects - Topic Suggestions</a>  
+            </div>
+          </div>  
+          <div class="navbar-item">
+          <a class="button is-small has-text-light" href="{% url 'topic_pages:search_view' %}"> 
+              <i class="fa-regular fa-magnifying-glass fa-1x"></i>  
+          </a>
+        </div> 
+        <div class="navbar-item"> 
+          <a class="button is-danger has-text-weight-bold mr-1 is-outlined has-text-warning" href="{% url 'orders:create' %}"> 
+            Order</a>
+        </div> 
+            <!-- {% if request.user.is_authenticated %}
+    <div class="navbar-item has-dropdown is-hoverable">
+      <a class="navbar-link">
+        Hello <span class="ml-1 has-text-warning">{{ request.user.first_name|default:request.user.username }}</span>
+        <i class="fa-duotone fa-circle-user fa-2x has-text-grey-lighter ml-2"></i>
+      </a> 
+      <div class="navbar-dropdown">
+        <span {% if section == 'dashboard' %} class="selected" {% endif %}>
+          <a class="navbar-item" href="{% url 'dashboard' %}">My Dashboard</a>
+        </span>
+        <span {% if section == 'images' %} class="selected" {% endif %}>
+          <a class="navbar-item" href="#">Past Projects</a><-- Need link for Past Projects --
+        </span>
+        <span {% if section == 'people' %} class="selected" {% endif %}>
+          <a class="navbar-item" href="#">Current Projects</a><-- Need link for Current Projects --
+        </span> 
+        <hr class="dropdown-divider">
+        <a class="navbar-item" href="{% url 'logout' %}">
+          <-- <i class="fa-duotone fa-arrow-up-left-from-circle mr-2"></i> --
+          Logout</a>
+         
+      </div>
+    </div> 
+    {% else %}
+    <div class="navbar-item buttons">  
+      <a class="button is-light is-small" href="{% url 'register' %}">Sign Up</a>
+        <a class="button is-info is-small" href="{% url 'login' %}">Log In</a>
+        </div>
+    {% endif %} -->
+      </div>
+    </div> 
+    </nav> 
+    <!-- <nav class="level breadbar pt-4 pb-2 mt-5" style="font-size: .95em;">
+      {% if request.user.is_authenticated %}
+      <div class="level-item has-text-centered">
+        <div>
+          <span {% if section == 'dashboard' %} class="selected" {% endif %}>
+            <a href="{% url 'dashboard' %}">My Dashboard</a>
+          </span>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <span {% if section == 'images' %} class="selected" {% endif %}>
+            <a href="#">Past Projects</a> -- Need link for Past Projects --
+          </span>
+        </div>
+      </div>
+      <div class="level-item has-text-centered">
+        <div>
+          <span {% if section == 'people' %} class="selected" {% endif %}>
+            <a href="#">Current Projects</a> -- Need link for Current Projects --
+          </span> 
+        </div>
+      </div>
+      {% endif %} 
+      <div class="level-item has-text-centered" >
+        <div class="buttons is-small is-responsive"> 
+          {% if request.user.is_authenticated %}
+        Hello {{ request.user.first_name|default:request.user.username }}, &nbsp;
+        <a class="button is-primary" href="{% url 'logout' %}">Logout<i class="fa-duotone fa-arrow-up-left-from-circle ml-2"></i></a>
+      {% else %}
+        <a class="button is-light" href="{% url 'login' %}">Log-in<i class="fa-duotone fa-right-from-bracket ml-2"></i></a>
+      {% endif %}
+        </a> 
+      </div>
+      </div>
+    </nav> -->
+      
+    {% block header %}
+    {% block back-style %}<!---<section class= "section is-medium" ---->{% endblock back-style %} 
+  <div class="container">
+    <div class="columns is-multiline">
+      <div class="column is-5-desktop is-7-tablet my-2">
+        <div class="glassDark px-4 py-3"> 
+          <h4 class="mt-3 mb-3 p-4 is-size-4 has-text-dark has-text-weight-bold has-text-centered">Need Help Writing a Paper?</h4>
+          <p class="has-text-black-bis mb-5 has-text-centered">Have Paper Masters custom write your project today!</p>
+          <div class="has-text-grey-lighter mb-1 ml-6 mb-4">
+            <li>24/7 Customer Support</li>
+            <li>Free Plagiarism Check</li>
+            <li>Writing at Your Level</li>
+            <li>Writers All Have Advanced Degrees</li>
+            <li>Will Follow Specific Instructions</li>  
+          </div>
+          <p class="has-text-black-bis mb-5 has-text-centered">Have Paper Masters custom write your project today!</p>
+          <div class="buttons is-centered mb-4 p-3"><a class="button is-warning is-focused is-medium has-text-black" href="{% url 'orders:create' %}">Yes! Write My Paper!</a></div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  </section> 
+</header>  
+ 
+{% block crumbs %}
+<nav class="breadcrumb breadbar px-5 py-4" style ="text-transform: capitalize;" aria-label="breadcrumbs">
+<div class="is-flex is-justify-content-space-between">
+  {% if breadcrumbs %}  
+      {% include "dynamic_breadcrumbs/breadcrumbs.html" with breadcrumbs=breadcrumbs %} 
+  {% endif %} 
+  <div class="field has-addons is-justify-content-flex-end">
+    <div class="control">
+      <form class="d-flex" method="POST" action="{% url 'topic_pages:search_view' %}">
+        {% csrf_token %}
+      <input class="input is-small" type="search" placeholder="Search Topics" aria-label="Search" name="searched">
+    </div>
+    <div class="control">
+      <button class="button is-small has-text-dark" type="submit"> 
+        <i class="fa-regular fa-magnifying-glass fa-1x has-text-light"></i>  
+      </button> 
+    </form>
+  </div>
+  </div>  
+  </div> 
+</nav> {% endblock crumbs %} 
+
+{% endblock header %} 
+
+{% block forhome %}
+<section class="section">
+    <div class="container">
+      <div class="columns is-multiline">
+        <div class="column is-8">
+          <div class="box has-background-white-bis p-6">
+            <div class="conStyle has-text-grey-dark mb-5">
+            {% block content %}
+            {% endblock content %} 
+          </div>
+        </div>
+    </div> 
+
+            {% block sidecolumn %}
+            <div class="column is-one-third"> 
+                <div class="doubleBorder p-3">
+                  <h2 class="is-size-2-desktop is-size-3-mobile is-size-4-tablet has-text-weight-bold has-text-grey has-text-centered">Paper Masters</h2>
+                  <div class="has-text-light p-4 mb-5">
+                    <span style="text-indent: 15px; list-style-position: inside;">
+                    <li>Custom Written Papers</li>
+                    <li>100% Plagiarism Free</li>
+                    <li>24/7 Customer Service</li>
+                    <li>Guaranteed Confidentiality</li>
+                    <li>Text us for a Quote Today!</li>
+                  </span>
+                    <ul style="text-indent: 40px;"><li>1-570-301-7456</li> </ul>
+                  
+        
+                    <h3 class="is-size-5 has-text-weight-bold has-text-warning has-text-centered p-4">Choosing a Research Paper Topic</h3>
+                    <p>Can't decide on a topic? Need ideas or inspiration for research in your field of study? 
+                      Paper Masters provides topic suggestions to make your decision easier.</p>
+
+                      <aside class="menu subasidelink">
+                        <span class="pb-2"> 
+                          <h3 class="is-size-5 has-text-weight-bold has-text-danger mb-1 mt-3">
+                            Start with a Subject:</h3></span>
+                          <ul class="menu-list"> 
+                              <li> 
+                                  <ul> 
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/anthropology">
+                                      <i class="fa-thin fa-map has-text-link"></i>
+                                      Anthropology</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/art">
+                                      <i class="fa-regular fa-palette mr-1 has-text-link"></i>
+                                      Art</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/business">
+                                      <i class="fa-regular fa-chart-user mr-1 has-text-link"></i>
+                                      Business</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/criminal-justice">
+                                      <i class="fa-regular fa-scale-balanced mr-1 has-text-link"></i>
+                                      Criminal Justice</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/economics">
+                                      <i class="fa-regular fa-chart-column mr-1 has-text-link"></i> 
+                                      <!-- <i class="fa-duotone fa-piggy-bank mr-1 has-text-link"></i> -->
+                                      <!-- <i class="fa-duotone fa-circle-dollar-to-slot mr-1 has-text-link"></i> -->
+                                      Economics</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/education">
+                                      <i class="fa-regular fa-building-columns mr-1 has-text-link"></i> 
+                                      Education</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/geography">
+                                      <i class="fa-regular fa-globe-stand mr-1 has-text-link"></i> 
+                                      Geography</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/literature">
+                                      <i class="fa-sharp fa-solid fa-books mr-1 has-text-link"></i>
+                                      Literature</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/medical-health"> 
+                                      <i class="fa-regular fa-hospital mr-1 has-text-link"></i>
+                                      Medical Health</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/military">
+                                      <i class="fa-regular fa-jet-fighter mr-1 has-text-link"></i>
+                                      Military</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/nursing">
+                                      <i class="fa-regular fa-user-nurse-hair-long mr-1 has-text-link"></i>
+                                      Nursing</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/philosophy">
+                                      <i class="fa-regular fa-face-thinking mr-1 has-text-link"></i> 
+                                      Philosophy</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/political-science">
+                                      <i class="fa-regular fa-landmark-dome mr-1 has-text-link"></i>
+                                      Political Science</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/psychology">
+                                      <i class="fa-regular fa-head-side-brain mr-1 has-text-link"></i>
+                                      Psychology</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/religion">
+                                      <i class="fa-regular fa-church mr-1 has-text-link"></i>
+                                      Religion</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/science">
+                                      <i class="fa-regular fa-microscope mr-1 has-text-link"></i>
+                                      Science</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/sociology">
+                                      <i class="fa-regular fa-people-simple mr-1 has-text-link"></i>
+                                      Sociology</a></li>
+                                      <li><a href="{{ topic_pages.get_absolute_url }}/technoloy">
+                                      <i class="fa-regular fa-laptop-mobile mr-1 has-text-link"></i>
+                                      Technology</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/us-history">
+                                      <i class="fa-regular fa-flag-usa mr-1 has-text-link"></i>
+                                      US History</a></li>
+                                    <li><a href="{{ topic_pages.get_absolute_url }}/world-history">
+                                      <i class="fa-regular fa-earth-americas mr-1 has-text-link"></i>
+                                      World History</a></li>
+                                  </ul>
+                              </li> 
+                          </ul>  
+                      </aside>
+                      <p><ul>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                      </ul></p>
+                  </div>
+                </div>
+              </div>
+              {% endblock sidecolumn %}
+            </div>
+          </div> 
+        </section>
+         
+        {% block lowercontent %}
+        {% endblock lowercontent %} 
+
+{% endblock forhome %}
+
+
+
+        {% block footer %}
+        <footer class="section">
+            <div class="container pb-5 has-text-centered">
+              <a class="mx-auto mb-4 is-inline-block" href="{% url 'papermasters:home' %}">
+                <img class="image" src="{% static 'images/logo-papermasters.svg' %}" alt="Paper Masters Logo" width="180px" height="180px">
+              </a>
+              <div class="column is-4 is-offset-4 has-text-light has-text-centered mb-4">
+                <div><span itemprop="name">Paper Masters</span>
+                </div>
+                <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">Main address: 
+                  <span itemprop="addressLocality">Hunlock Creek, PA</span>
+                  <span itemprop="postalCode">18621</span>
+                </div>1-570-301-7456
+                <div>
+                Tel: <span itemprop="telephone">1-570-955-1438</span></div>
+                <div>E-mail: <span itemprop="email"><a href="mailto: eworld@papermasters.com">eworld@papermasters.com</a></span>
+                </div> 
+              </div>
+              <div>
+                <a class="mr-4 is-inline-block" href="https://www.facebook.com/Paper-Masters-89831184422">
+                  <img src="{% static 'images/facebook.svg' %}">
+                </a>
+                <a class="mr-4 is-inline-block" href="https://mobile.twitter.com/papermasters">
+                  <img src="{% static 'images/twitter.svg' %}">
+                </a> 
+                <a class="mr-4 is-inline-block" href="https://www.instagram.com/papermasters_eworld/">
+                  <img src="{% static 'images/instagram.svg' %}">
+                </a>
+                <a class="is-inline-block" href="https://www.linkedin.com/company/paper-masters?original_referer=https%3A%2F%2Fwww.google.com%2F">
+                  <img src="{% static 'images/linkedin.svg' %}">
+                </a>
+              </div>
+            </div>
+            <div class="pt-5" style="border-top: 1px solid #dee2e6;"></div>
+            <div class="container">
+              <div class="column is-full">
+                <p class="has-text-centered has-text-grey">Paper Masters is a custom research paper writing service. Operating for over 20 years, Paper Masters has established itself as the premier custom research paper company on the Internet. Paper Masters is a division of E World Publishing.</p>
+              </div>
+              <div class="pt-5 has-text-centered">
+                <p>Paper Masters - E World Publishing © 2022</p>
+              </div>
+            </div>
+          </footer>
+          {% endblock footer %}
+        
+        </body>
+        </html> 
+        {% block scripts %}{% endblock scripts %}

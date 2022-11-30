@@ -1,0 +1,28 @@
+{% extends "papermasters/base.html" %}
+{% load static %}  
+
+{% block meta %}
+<title>Economics Research Papers Custom Written</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Paper Masters topic suggestions for economics research papers help students get on their way to choosing a topic on banking, economic history, the economy, international economics and economic theory and theorists." />
+{% endblock meta %}  
+
+{% block back-style %}
+<section class="section is-small" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/economics-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}  
+
+  {% block content %} 
+  <h1>Economics Research Papers</h1> 
+  <p>Economics can be a difficult topic when having to write research on it. 
+    Let Paper Masters suggest a topic for you or give us your custom research paper topic on any subject you need. 
+    From Adam Smith to Max Weber, Economic development of third world nations to the Economy in Modern Asia, Paper Masters can put together a project that you can be proud of. </p>
+  
+  <h3 class="mb-5 is-size-4 is-size-3-mobile has-text-weight-bold has-text-centered">Research Paper Topic Suggestions on Economics</h3>
+  <div class="optimShadBox conStyle has-text-grey-dark has-background-white-ter">
+    <div>{% for x in eco_list %}  
+      <p><strong><a href= "{{ x.slug }}">{{ x.name }}</a></strong> - {{ x.meta_description }}</p>
+      {% endfor %}
+      </div> 
+      </div>
+  {% endblock content %}

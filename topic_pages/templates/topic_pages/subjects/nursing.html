@@ -1,0 +1,28 @@
+{% extends "papermasters/base.html" %}
+{% load static %}  
+
+{% block meta %}
+<title>Nursing Research Papers Custom Written</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Paper Masters offers hundreds of sample nursing topics or have our writers custom write a nursing research project on the nursing profession, philosophy or theory behind the complex nature of the career of a nurse." />
+{% endblock meta %}  
+
+{% block back-style %}
+<section class="section is-small" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/nursing-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}  
+
+  {% block content %} 
+  <h1>Nursing Research Papers Custom Written</h1>
+  <p>Nursing students often must do research projects on the theoretical side of their profession.<strong> 
+    Paper Masters offers hundreds of sample nursing topics or have our writers custom write a nursing project on the nursing profession, philosophy or theory behind the complex nature of the life of a nurse.</strong> 
+    From Dorothy Orem to Nursing mentorship, no topic is to complex for the writers at Paper Masters.</p>
+
+  <h3 class="mb-5 is-size-4 is-size-3-mobile has-text-weight-bold has-text-centered">Research Paper Topic Suggestions on Nursing</h3>
+  <div class="optimShadBox conStyle has-text-grey-dark has-background-white-ter">
+    <div>{% for x in nur_list %}  
+      <p><strong><a href= "{{ x.slug }}">{{ x.name }}</a></strong> - {{ x.meta_description }}</p>
+      {% endfor %}
+      </div> 
+      </div>
+  {% endblock content %}

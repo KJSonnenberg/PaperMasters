@@ -1,0 +1,29 @@
+{% extends "papermasters/base.html" %}
+{% load static %}  
+
+{% block meta %}
+<title>Sociology Research Paper Topics from Paper Masters</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Sociology research paper topics use relevant social science resources for the topics such as abortion, culture, gay, lesbian and transgender issues, social problems, social services, sociological theory and exploring famous sociologists." />
+{% endblock meta %}  
+
+{% block back-style %}
+<section class="section is-small" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/sociology-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}  
+
+  {% block content %} 
+  <h1>Sociology Research Paper Topics</h1>
+  <p><strong>Paper Masters shows you how</strong> to write a research paper on any sociology subject using the topics you see on this web site. 
+    Sociology research papers from Paper Masters use relevant social science resources for all sociology topics for courses in many colleges. 
+    Our sociology topic suggestions can be used to create unique ideas for your own research papers. 
+    We are here to help on any topic with our awesome repository of research paper ideas.</p>
+
+  <h3 class="mb-5 is-size-4 is-size-3-mobile has-text-weight-bold has-text-centered">Research Paper Topic Suggestions on Sociology</h3>
+  <div class="optimShadBox conStyle has-text-grey-dark has-background-white-ter">
+    <div>{% for x in soc_list %}  
+      <p><strong><a href= "{{ x.slug }}">{{ x.name }}</a></strong> - {{ x.meta_description }}</p>
+      {% endfor %}
+      </div> 
+      </div>
+  {% endblock content %}

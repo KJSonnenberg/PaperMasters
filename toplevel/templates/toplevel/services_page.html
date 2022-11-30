@@ -1,0 +1,50 @@
+{% extends "papermasters/base.html" %}
+{% load static %}
+
+{% block back-style %}
+<section class="section is-small mt-5" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/services-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}  
+
+  {% block content %} 
+              <h1>Paper Masters Understands Research Papers!</h1>
+                <p><b>A research paper can be overwhelming</b> for the busy student, working professional or non-traditional student.
+                  Far more complex than a simple essay, a research paper requires a clear thesis, a well-thought-out structure, and most importantly, valid academic sources to back up the thesis of the research. 
+                  With help from Paper Masters this process becomes clear and easy!</p>
+                  <h2>Complete Research Papers - Custom Written for You!</h2>
+                    <li>Custom Written Papers - Plagiarism Free</li>
+                    <li>All Research and Writing Is Done for You</li>
+                    <li>Quality, College Level Writing</li>
+                    <li>U.S. Writers with English as First Language</li>
+                    <li>Friendly, Helpful 24-Hour Customer Service</li>
+                
+                <p><!-- (((A listing of all services pages should be here  ))) --></p>
+                
+                  <h2>What Your Research Paper Includes</h2>
+                    <p>Our writers make certain your custom research paper conforms exactly to your thesis.
+                      This means it clearly presents supporting research and academic sources that come together in a well-written research project.</p>
+                        <p><b><em>Each Research Paper Includes:</em></b></p>
+                          <li>Delivered as a Microsoft Word Document (.doc)</li>
+                          <li>12 pt. Courier New Font with 1" margins</li>
+                          <li>Free Reference Page</li>
+                          <li>In-text citation of current and relevant resource material</li>
+                          <li>Proper formatting in MLA, APA or whichever citation style you choose</li>
+
+                        <p>Research papers are meant to be compact and succinct information on a topic.
+                          The key element in defining a good research paper is the use of relevant source material that backs up an excellent presentation of ideas and information. 
+                          In sum, your research paper should:</p><br>
+                          <li>Illustrate that you are an expert on a topic</li>
+                          <li>Collate ideas</li>
+                          <li>Present the gathered information in written form</li>
+                          <li>Back up the research with relevant academic sources</li>
+                          <li>Present strong and relevant information in your own words that synthesize the ideas of the paper</li>
+
+              <!-- Content End -->  
+              <div class="columns">
+                <div class="column optimShadBox conStyle has-text-grey-dark has-background-white-ter p-6">
+                  <h3 class="mb-5 is-size-4 is-size-5-mobile has-text-weight-bold has-text-centered">More Research Writing Services</h3>
+                  {% for l in service_list %}
+                <div><a href= "{{ l.slug }}">{{ l.title }}</a> - {{ l.meta_description }}</div>
+                {% endfor %} 
+                </div>
+                </div>
+        {% endblock content %}

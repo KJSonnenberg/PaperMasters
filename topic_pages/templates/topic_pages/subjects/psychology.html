@@ -1,0 +1,29 @@
+{% extends "papermasters/base.html" %}
+{% load static %}  
+
+{% block meta %}
+<title>Psychology Research Papers</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Paper Masters can write you a custom psychology research paper on any topic - psychology case studies, child psychology, psychological disorders, famous psychologists, human sexuality, psychological research, psychological theory and psychotherapy." />
+{% endblock meta %}  
+
+{% block back-style %}
+<section class="section is-small" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/psychology-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}  
+
+  {% block content %} 
+  <h1>Psychology Research Papers Custom Written</h1> 
+    <p>Psychology research papers range from Counseling Theories to Human Sexuality. 
+      Many psychology topics can be combined or integrated together when writing on psychology. 
+      Be sure to refine your topic and focus on a narrow subject, much likes the ones you see on this page. 
+      <strong>Paper Masters will also write you a custom research paper on any psychology topic.</strong></p>
+
+  <h3 class="mb-5 is-size-4 is-size-3-mobile has-text-weight-bold has-text-centered">Research Paper Topic Suggestions on Psychology</h3>
+  <div class="optimShadBox conStyle has-text-grey-dark has-background-white-ter">
+    <div>{% for x in psy_list %}  
+      <p><strong><a href= "{{ x.slug }}">{{ x.name }}</a></strong> - {{ x.meta_description }}</p>
+      {% endfor %}
+      </div> 
+      </div>
+  {% endblock content %}

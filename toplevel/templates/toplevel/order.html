@@ -1,0 +1,52 @@
+{% extends "papermasters/base.html" %}
+{% load static %}
+
+    {% block meta %}
+    <title>Order custom written research projects from Paper Masters</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Place your order on this page for a custom written research project from Paper Masters. Essays, research papers, capstone projects, book reviews and thesis projects." />
+    {% endblock meta %}  
+        
+    {% block back-style %}
+    <section class="section subjectspage-cover is-small" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/prices-cover.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}   
+
+  {% block crumbs %} 
+  <li property="itemListElement" typeof="ListItem" class="is-active">
+  <a property="item" typeof="WebPage">
+    <span property="name">Order</span></a>
+    <meta property="position" content=“2”>
+    </li> 
+{% endblock crumbs %}
+        
+    {% block content %} 
+                  <h2 class="mb-5 is-size-3 is-size-3-mobile has-text-weight-bold has-text-centered has-text-dark">Order a Custom Term Paper</h2>
+                  <p class="has-text-dark has-text-weight-bold">Secure, Confidential and Quick</p>
+                  <div class="px-5 mb-4 mt-2 has-text-dark">
+                    <ul>1. Fill out the order form below.</ul>
+                    <ul>2. New customers receive a call within 12 hours to confirm <a href="anthropology/culture">pricing</a> and your order information.</ul>
+                    <ul class="has-text-weight-bold">Note... New customers are NEVER charged before we call you to confirm the price and your information.</ul>
+                    <ul>3. Receive your project in e-mail on the date you specify below. It's that simple!</ul> 
+                  </div> 
+                  
+                <div class="has-text-dark has-text-weight-bold mb-5 conStyle">  
+                  <p><em>If you have ANY trouble filling out the order form below, please call us at 1-570-955-1438.</em></p>  
+                  </div>
+                   <div><script src="https://www.cognitoforms.com/f/seamless.js" data-key="oR6ff5mCfk6Q0ABcpR9vVA" data-form="4"></script>
+                  </div> 
+      {% endblock content %} 
+      {% block sidecolumn %}
+      <div class="column is-one-third"> 
+        <div class="box has-background-light p-3">
+          <h2 class="is-size-3-desktop is-size-4-mobile is-size-5-tablet has-text-weight-bold has-text-dark has-text-centered">Custom Term Papers</h2>
+          <div class="has-text-dark p-4 mb-5">
+            <p class="mb-5"><b>All projects are custom written</b> by professional academic writers. Let go of the stress of never having enough time to complete all your projects. Get help today and have our writers give you the perfect guide for your research project.</p> 
+            <p class="mb-5 pt-3">Safe, private and secure payment options - Guaranteed!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+      {% endblock sidecolumn %}

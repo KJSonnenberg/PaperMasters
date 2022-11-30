@@ -1,0 +1,60 @@
+{% extends "papermasters/base.html" %}
+{% load static %} 
+
+{% block meta %}
+<title>Paper Masters Guarantees Our Custom Research Papers</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Our Guarantees show that we stand behind our research paper services. Trust only verified research paper companies for college and academic writing." />
+{% endblock meta %}  
+
+{% block back-style %}
+<section class="section is-small mt-5" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/contact-us-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}  
+
+  {% block content %} 
+  <h1>Our Research Paper Guarantees</h1>
+  
+  <p>Protect your money and your reputation with rock solid Guarantees from Paper Masters.</p>
+    <br>
+    <ul>
+      <li><p>• <a href="https://papermasters.com/our-writers">Custom Writing</a> - Written only for you exactly according to your instructions.</p></li>
+      <li><p>• <a href="https://papermasters.com/plagiarism-free-papers">Plagiarism Free</a> - Our writers do NOT cut and paste from the internet.</p></li>
+      <li><p>• <a href="https://papermasters.com/research-paper-format">On-Time Delivery</a> - Guaranteed by 11:59PM PST on the date you order your project.</p></li>
+      <li><p>• <a href="https://papermasters.com/privacy-policy">Confidential Services</a> - Your identity is protected and your project is never redistributed.</p></li>
+      <li><p>• <a href="https://papermasters.com/customer-service">24 Hour Customer Support</a> - Day or night - 24 hours a day - every day!</p></li>
+    </ul>
+    <p><strong>You can count on Paper Masters</strong> to uphold our guarantees to you. We've been serving students for over 14 years and have a flawless reputation.</p>
+   
+    <br>
+
+    <h2>You Can Verify Our  Reputation</h2> 
+          <table width="290" border="0" cellpadding="0" cellspacing="0" title="Click to Verify - This site chose VeriSign SSL for secure e-commerce and confidential communications.">
+            <tr>
+              <td width="135" align="left" valign="top"><script type="text/javascript" src="https://seal.verisign.com/getseal?host_name=www.papermasters.com&amp;size=M&amp;use_flash=NO&amp;use_transparent=NO&amp;lang=en"></script></td>
+              <td width="155" valign="middle" style="font:11px/16px Helvetica,Verdana,Arial,sans-serif;">This site chose VeriSign <a href="https://www.verisign.com/en_US/website-presence/online/ssl-certificates/index.xhtml" target="_blank">SSL</a> for secure e-commerce and confidential communications.</td>
+            </tr>
+            <tr>
+              <td  align="center" valign="top"><a href="https://www.verisign.com/en_US/website-presence/online/ssl-certificates/index.xhtml" target="_blank" style="color:#000000; text-decoration:none; font:bold 7px verdana,sans-serif; letter-spacing:.5px; text-align:center; margin:0px; padding:0px;">ABOUT SSL CERTIFICATES</a></td>
+              <td width="155">&nbsp;</td>
+            </tr>
+          </table>
+
+          <br>
+
+          <h3>You can verify the legitimacy of Paper Masters on the web in many ways:</h3>
+          <ul>
+            <li><a href="{% url 'toplevel:about_us' %}">Our Story</a> - How Paper Masters began.</li>
+            <li><a href="http://wayback.archive.org/web/*/http://www.papermasters.com">Way-Back Machine</a> - Verify how long Paper Masters has been in business.</li>
+            <li><a href="http://www.whitepages.com/name/Penni-Rood/Hunlock-creek-PA">Whitepages.com</a> - Our Owner/Operator</li> 
+            </ul>
+            <p>You can be certain that Paper Masters is a legitimate, trusted company. Check us out in social media, see the history of our website and verify our identity through any of the services below. </p>
+         </p>
+            <h4>Get to Know Paper Masters</h4> 
+          <div><p><a href="https://www.linkedin.com/company/paper-masters?original_referer=https%3A%2F%2Fwww.google.com%2F">
+            <img class="image is-64x64" style="background-color: white;" src="{% static 'images/linkedin-light.svg' %}">LinkedIn</a>: The source for business networking on the internet!</p></div>
+
+          <div><p><a href="https://www.facebook.com/Paper-Masters-89831184422">
+            <img class="image is-48x48" style="background-color: #4267B2;" src="{% static 'images/facebook-light.svg' %}">Become a Fan of Paper Masters</a> on Facebook and receive a $1 off per page on your next order!</p></div>
+
+    {% endblock content %}

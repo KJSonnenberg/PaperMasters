@@ -1,0 +1,29 @@
+{% extends "papermasters/base.html" %}
+{% load static %}  
+
+{% block meta %}
+<title>Geography Research Paper Topic  Suggestions</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Paper Masters custom writes geography research paper topic suggestions such as the Amazon Basin, African Geography, Global Geography, Physical Geography, Stonehenge, or any country in the world that you need a geography research paper on." />
+{% endblock meta %}  
+
+{% block back-style %}
+<section class="section is-small" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/geography-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}  
+
+  {% block content %} 
+  <h1>Geography Research Papers</h1>
+  <p><strong>Geography research papers are custom written for your exact topic at Paper Masters.</strong> 
+    Below are geography topic suggestions in case you are stuck and can't seem to nail down exactly what needs to be written about. 
+    See topics that range from coastal erosion to Middle Eastern Geography. 
+    Any geography topic is possible with Paper Masters, the only company that custom writes all research papers and guarantees plagiarism free projects.</p>
+  
+    <h3 class="mb-5 is-size-4 is-size-3-mobile has-text-weight-bold has-text-centered">Research Paper Topic Suggestions on Geography</h3>
+  <div class="optimShadBox conStyle has-text-grey-dark has-background-white-ter">
+    <div>{% for x in geo_list %}  
+      <p><strong><a href= "{{ x.slug }}">{{ x.name }}</a></strong> - {{ x.meta_description }}</p>
+      {% endfor %}
+      </div> 
+      </div>
+  {% endblock content %}

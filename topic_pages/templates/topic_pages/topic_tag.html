@@ -1,0 +1,9 @@
+ 
+            
+            <div class="tags">
+                {% for tag in tags %}
+                <button class="tag button is-info is-small is-responsive">
+                    <a href="{% url 'topic_pages:posts_by_tag' tag.slug %}">{{ tag.name }}</a>
+                </button>
+                {% endfor %} 
+            </div>  

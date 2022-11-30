@@ -1,0 +1,28 @@
+{% extends "papermasters/base.html" %}
+{% load static %}  
+
+{% block meta %}
+<title>Medical Health Research Papers Custom Written</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Paper Master provides custom written medical research papers on Alternative Medicine, Diseases, End of Life Issues, Ethics in Health Care, Determinants of Health, Health Care Administration, Medical Conditions, Medical Treatments and issues in pharmaceuticals." />
+{% endblock meta %}  
+
+{% block back-style %}
+<section class="section is-small" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/medical-research-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}  
+
+  {% block content %} 
+  <h1>Medical Health Research Papers</h1>
+            <p>Nurses, Pre-Med Students and Healthcare professionals all need to write research projects on various medical health related topics. 
+              Paper Master provides custom written medical research papers on any subject needed, such as Alternative Medicine, Diseases, End of Life Issues, Ethics in Health Care, Determinants of Health, Health Care Administration, Medical Conditions, Medical Treatments and issues in pharmaceuticals. 
+              Our writers in the medical field provide up to date research with the latest peer reviewed information to make every medical health paper we produce a quality, publishable work.</p>
+
+  <h3 class="mb-5 is-size-4 is-size-3-mobile has-text-weight-bold has-text-centered">Research Paper Topic Suggestions on Medical Health</h3>
+  <div class="optimShadBox conStyle has-text-grey-dark has-background-white-ter">
+    <div>{% for x in med_list %}  
+      <p><strong><a href= "{{ x.slug }}">{{ x.name }}</a></strong> - {{ x.meta_description }}</p>
+      {% endfor %}
+      </div> 
+      </div>
+  {% endblock content %}

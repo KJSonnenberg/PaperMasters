@@ -1,0 +1,29 @@
+{% extends "papermasters/base.html" %}
+{% load static %}  
+
+{% block meta %}
+<title>Military Research Papers</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Military Research Papers discuss the roll that the military plays in national security, both in the past and today. Paper Masters has former Veterans and expert researchers in Military research that are available for custom writing on general military topics, military battles and military strategy." />
+{% endblock meta %}  
+
+{% block back-style %}
+<section class="section is-small" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/military-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}  
+
+  {% block content %} 
+  <h1>Military Research Papers</h1>
+  <p><strong>Military Research Papers discuss the roll that the military plays in national security</strong>,  both in the past and today. 
+    Military schooling often requires strategic  examination of past battles and current military strategy. 
+    Paper Masters has former Veterans and expert researchers in Military research that are available for custom writing on general military topics, military battles and military strategy. 
+    Keep up with the changing times of academic military research and get help from the experts.</p>
+
+  <h3 class="mb-5 is-size-4 is-size-3-mobile has-text-weight-bold has-text-centered">Research Paper Topic Suggestions on Military</h3>
+  <div class="optimShadBox conStyle has-text-grey-dark has-background-white-ter">
+    <div>{% for x in mil_list %}  
+      <p><strong><a href= "{{ x.slug }}">{{ x.name }}</a></strong> - {{ x.meta_description }}</p>
+      {% endfor %}
+      </div> 
+      </div>
+  {% endblock content %}

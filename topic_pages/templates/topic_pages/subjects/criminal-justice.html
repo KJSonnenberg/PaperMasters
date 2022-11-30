@@ -1,0 +1,29 @@
+{% extends "papermasters/base.html" %}
+{% load static %}  
+
+{% block meta %}
+<title>Criminal Justice Research Papers</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Research paper help on criminal justice topics such as capital punishment, types of crime, famous criminals, forensic anthropology, laws and the legal system, the prison system, serial killers and theories of crime." />
+{% endblock meta %}  
+
+{% block back-style %}
+<section class="section is-small" style= "background-image: linear-gradient(to right,rgba(7,20,37,.98) 0,rgba(7,20,37,.1) 100%), url('/static/images/criminal-justice-header.webp'); background-repeat: no-repeat; background-size: cover;">
+  {% endblock back-style %}  
+
+  {% block content %} 
+  <h1>Criminal Justice </h1>
+<p>Paper Masters offers topic suggestions on many criminal justice topics. 
+  Capital punishment, types of crime, famous criminals, forensic anthropology, laws and the legal system, the prison system, serial killers and theories of crime are the main categories. 
+  Topic samples can be general, such as the death penalty, or they can more specific, like the Elizabeth Smart Case.</p>
+  
+  
+  <h3 class="mb-5 is-size-4 is-size-3-mobile has-text-weight-bold has-text-centered">Research Paper Topic Suggestions on Criminal Justice</h3>
+  <div class="optimShadBox conStyle has-text-grey-dark has-background-white-ter">
+    <div>{% for x in cri_list %}  
+      <p><strong><a href= "{{ x.slug }}">{{ x.name }}</a></strong> - {{ x.meta_description }}</p>
+      {% endfor %}
+      </div> 
+      </div>
+  {% endblock content %}
