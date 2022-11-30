@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from servicepages.models import Service 
+from .models import Service 
 from taggit.models import Tag
 from django.db.models import Count 
 

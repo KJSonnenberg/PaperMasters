@@ -1,9 +1,9 @@
 from django.contrib.sitemaps import Sitemap 
 from django.contrib import sitemaps
 from django.shortcuts import reverse
-from .models import Post, Category
 from resources.models import ResourceModel
-from servicepages.models import Service
+from servicespages.models import Service
+from .models import Post, Category
 import datetime
 
 

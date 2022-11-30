@@ -1,7 +1,9 @@
-from django.shortcuts import render 
+from django.shortcuts import render
+from servicespages.models import Service
 from topic_pages.models import Category
 from resources.models import ResourceModel
-from servicepages.models import Service
+
+
 
 def prices(request):
     return render(request, 'toplevel/prices.html')  
