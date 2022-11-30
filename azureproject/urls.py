@@ -5,7 +5,7 @@ from django.urls import path, include
 from django.urls import re_path as url
 from django.contrib.sitemaps.views import sitemap
 from topic_pages.sitemaps import *
-from . import views
+#from . import views
 
 # To add a new path, first import the app:
 # import blog
