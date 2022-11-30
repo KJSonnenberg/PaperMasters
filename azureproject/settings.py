@@ -41,6 +41,31 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "django.contrib.admin",
+    "django.contrib.auth",
+    "django.contrib.sitemaps", # Sitemap
+    "django.contrib.sites", # Sitemap
+    "django.contrib.contenttypes",
+    "django.contrib.sessions",
+    "django.contrib.messages",
+    "django.contrib.staticfiles",
+    "django.contrib.redirects",
+    "mptt",
+    "dynamic_breadcrumbs",
+    'social_django',
+    'django_extensions',
+    'phonenumber_field',
+    'django_countries',
+    'localflavor',
+    'phonenumbers',
+    'crispy_forms',
+    'crispy_bulma',
+    'bootstrap_datepicker_plus',
+    'django_htmx',
+    'taggit',
+    #"formset", #might use later
+    "formtools",
+    "ckeditor",
 ]
 
 MIDDLEWARE = [
@@ -66,6 +91,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "dynamic_breadcrumbs.context_processors.breadcrumbs",
             ],
         },
     },
@@ -143,3 +169,13 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#Karen's added code
+
+SITE_ID=1
+
+TAGGIT_CASE_INSENSITIVE = True
+
+CRISPY_ALLOWED_TEMPLATE_PACKS = ("bulma",)
+CRISPY_TEMPLATE_PACK = "bulma"
