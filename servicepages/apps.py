@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ServicepagesConfig(AppConfig):
+class ServicepageConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'servicepages'

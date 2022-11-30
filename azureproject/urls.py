@@ -5,7 +5,7 @@ from django.urls import path, include
 from django.urls import re_path as url
 from django.contrib.sitemaps.views import sitemap
 from topic_pages.sitemaps import *
-#from . import views
+from . import views
 
 # To add a new path, first import the app:
 # import blog
@@ -18,7 +18,7 @@ from topic_pages.sitemaps import *
 sitemaps={ 
     'static': StaticViewSitemap,
     'resourcemap': ResourceSitemap,
-    #'servicemap': ServiceSitemap, 
+    'servicemap': ServiceSitemap, 
     'subjectmap': SubtopicSitemap,
     'pagemap': PageSitemap,
 }
@@ -27,7 +27,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),    
     path('resources/', include('resources.urls')),
-    #path('services/', include('servicepages.urls')),
+    path('services/', include('servicepages.urls')),
     path('', include('papermasters.urls')),
     path('', include('toplevel.urls')),
     path('', include('topic_pages.urls')),
