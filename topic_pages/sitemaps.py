@@ -2,7 +2,7 @@ from django.contrib.sitemaps import Sitemap
 from django.contrib import sitemaps
 from django.shortcuts import reverse
 from resources.models import ResourceModel
-#from servicespages.models import Service
+from servicepages.models import Service
 from .models import Post, Category
 import datetime
 
@@ -80,16 +80,16 @@ class PageSitemap(Sitemap):
     def lastmod(self, obj):
         return obj.last_update 
 
-# class ServiceSitemap(Sitemap):
-#     changefreq = "weekly"
-#     priority = 0.9
-#     protocol = "https" 
+class ServiceSitemap(Sitemap):
+    changefreq = "weekly"
+    priority = 0.9
+    protocol = "https" 
     
-#     def items(self):
-#         return Service.objects.all() 
+    def items(self):
+        return Service.objects.all() 
     
-#     def lastmod(self, obj):
-#         return obj.last_update
+    def lastmod(self, obj):
+        return obj.last_update
 
 class ResourceSitemap(Sitemap):
     changefreq = "weekly"
