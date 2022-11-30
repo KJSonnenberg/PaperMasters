@@ -18,6 +18,6 @@ urlpatterns = [
     path('freelance-writer-position/', views.writing_opp, name='writing_opp'),
     path('subjects/', views.subjects_page, name='subjects_page'), 
     path('resources/', views.resources, name='resources_page'), 
-    path('services/', views.service_pages, name='service_page'),
+    #path('services/', views.service_pages, name='service_page'),
     path('FAQ/', views.faq, name='faq'),
     ]
