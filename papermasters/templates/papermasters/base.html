@@ -254,29 +254,27 @@
           <img class="image" src="{% static 'images/logo-papermasters.svg' %}" alt="Paper Masters Logo" width="200px" height="250px">
         </a> 
         <div>
-          <div><span itemprop="name">Paper Masters</span>
-          </div>
+          <div><span itemprop="name">Paper Masters</span></div>
           <div itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">Main address: 
             <span itemprop="addressLocality">Hunlock Creek, PA</span>
             <span itemprop="postalCode">18621</span>
           </div>
-          <div>
-          Tel: <span itemprop="telephone">1-570-955-1438</span></div>
-          <div>E-mail: <span itemprop="email"><a href="mailto: eworld@papermasters.com">eworld@papermasters.com</a></span>
-          </div> 
+          <div>Tel: <span itemprop="telephone"><a href="tel: 570-955-1438">1-570-955-1438</a></span></div>
+          <div>Text for Quote: <span itemprop="text"><a href="sms: 1-570-301-7456">1-570-301-7456</a></span></div>
+          <div>E-mail: <span itemprop="email"><a href="mailto: eworld@papermasters.com">eworld@papermasters.com</a></span></div> 
         </div>
         <div>
           <a class="mr-4 is-inline-block" href="https://www.facebook.com/Paper-Masters-89831184422">
-            <img src="{% static 'images/facebook.svg' %}">
+            <img src="{% static 'images/facebook.svg' %}" width="24" height="24">
           </a>
           <a class="mr-4 is-inline-block" href="https://mobile.twitter.com/papermasters">
-            <img src="{% static 'images/twitter.svg' %}">
+            <img src="{% static 'images/twitter.svg' %}" width="24" height="24">
           </a> 
           <a class="mr-4 is-inline-block" href="https://www.instagram.com/papermasters_eworld/">
-            <img src="{% static 'images/instagram.svg' %}">
+            <img src="{% static 'images/instagram.svg' %}" width="24" height="24">
           </a>
           <a class="is-inline-block" href="https://www.linkedin.com/company/paper-masters?original_referer=https%3A%2F%2Fwww.google.com%2F">
-            <img src="{% static 'images/linkedin.svg' %}">
+            <img src="{% static 'images/linkedin.svg' %}" width="24" height="24">
           </a>
         </div>
       </div>
@@ -305,6 +303,15 @@
           </div>
           <div class="column is-6 is-3-desktop mb-5">
             <h4 class="is-size-4 has-text-weight-bold mb-4 has-text-grey">Legal</h4>
+            <ul>
+              <li class="footlink"><a href="{% url 'toplevel:terms_use' %}">Terms</a></li>
+              <li class="footlink"><a href="{% url 'toplevel:guarantees' %}">Garauntees</a></li>
+              <li class="footlink"><a href="{% url 'toplevel:privacy_policy' %}">Privacy</a></li>
+              <li class="footlink"><a href="https://papermasters.com/sitemap.xml">Sitemap</a></li> 
+            </ul>
+          </div>
+          <div class="column is-6 is-3-desktop mb-5">
+            <h4 class="is-size-4 has-text-weight-bold mb-4 has-text-grey">Payments</h4>
             <ul>
               <li class="footlink"><a href="{% url 'toplevel:terms_use' %}">Terms</a></li>
               <li class="footlink"><a href="{% url 'toplevel:guarantees' %}">Garauntees</a></li>
