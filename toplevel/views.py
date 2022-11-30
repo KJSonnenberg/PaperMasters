@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from servicespages.models import Service
+#from servicespages.models import Service
 from topic_pages.models import Category
 from resources.models import ResourceModel
 
@@ -18,9 +18,9 @@ def resources(request):
     resource_list = ResourceModel.objects.all()
     return render(request, 'toplevel/resources_page.html', {'resource_list':resource_list})  
 
-def service_pages(request): 
-    service_list = Service.objects.all()
-    return render(request, 'toplevel/services_page.html', {'service_list':service_list})
+# def service_pages(request): 
+#     service_list = Service.objects.all()
+#     return render(request, 'toplevel/services_page.html', {'service_list':service_list})
 
 def about_us(request):
     return render(request, 'toplevel/about-us.html') 
