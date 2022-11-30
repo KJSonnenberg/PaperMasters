@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "papermasters.apps.PapermastersConfig",
     "topic_pages.apps.TopicPagesConfig",
     "resources.apps.ResourcesConfig",
-   # "servicepages.apps.ServicepagesConfig",
+    "servicepages.apps.ServicepagesConfig",
     "toplevel.apps.ToplevelConfig",
     #'restaurant_review.apps.RestaurantReviewConfig',
     'django.contrib.admin',
