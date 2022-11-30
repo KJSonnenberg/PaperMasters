@@ -53,7 +53,7 @@
               Writing
             </a> 
             <div class="navbar-dropdown is-right">
-              <a class="navbar-item" href="#">
+              <a class="navbar-item" href="{% url 'toplevel:service_page' %}">
                 Services</a>
               <a class="navbar-item" href="{% url 'toplevel:resources_page' %}">
                 Writing Resources</a>
@@ -294,7 +294,7 @@
           <div class="column is-6 is-3-desktop mb-5">
             <h4 class="is-size-4 has-text-weight-bold mb-4 has-text-grey">Resources</h4>
             <ul>
-              <li class="footlink"><a href="#">Services</a></li>
+              <li class="footlink"><a href="{% url 'toplevel:service_page' %}">Services</a></li>
               <li class="footlink"><a href="#">Project Format</a></li>
               <li class="footlink"><a href="#">Citation</a></li>
               <li class="footlink"><a href="#">Types of Papers</a></li>
