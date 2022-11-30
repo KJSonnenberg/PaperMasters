@@ -70,74 +70,10 @@
           <a class="button is-danger has-text-weight-bold mr-1 is-outlined has-text-warning" href="{% url 'toplevel:order' %}"> 
             Order</a>
         </div> 
-            <!-- {% if request.user.is_authenticated %}
-    <div class="navbar-item has-dropdown is-hoverable">
-      <a class="navbar-link">
-        Hello <span class="ml-1 has-text-warning">{{ request.user.first_name|default:request.user.username }}</span>
-        <i class="fa-duotone fa-circle-user fa-2x has-text-grey-lighter ml-2"></i>
-      </a> 
-      <div class="navbar-dropdown">
-        <span {% if section == 'dashboard' %} class="selected" {% endif %}>
-          <a class="navbar-item" href="{% url 'dashboard' %}">My Dashboard</a>
-        </span>
-        <span {% if section == 'images' %} class="selected" {% endif %}>
-          <a class="navbar-item" href="#">Past Projects</a><-- Need link for Past Projects --
-        </span>
-        <span {% if section == 'people' %} class="selected" {% endif %}>
-          <a class="navbar-item" href="#">Current Projects</a><-- Need link for Current Projects --
-        </span> 
-        <hr class="dropdown-divider">
-        <a class="navbar-item" href="{% url 'logout' %}">
-          <-- <i class="fa-duotone fa-arrow-up-left-from-circle mr-2"></i> --
-          Logout</a>
-         
-      </div>
-    </div> 
-    {% else %}
-    <div class="navbar-item buttons">  
-      <a class="button is-light is-small" href="{% url 'register' %}">Sign Up</a>
-        <a class="button is-info is-small" href="{% url 'login' %}">Log In</a>
-        </div>
-    {% endif %} -->
       </div>
     </div> 
     </nav> 
-    <!-- <nav class="level breadbar pt-4 pb-2 mt-5" style="font-size: .95em;">
-      {% if request.user.is_authenticated %}
-      <div class="level-item has-text-centered">
-        <div>
-          <span {% if section == 'dashboard' %} class="selected" {% endif %}>
-            <a href="{% url 'dashboard' %}">My Dashboard</a>
-          </span>
-        </div>
-      </div>
-      <div class="level-item has-text-centered">
-        <div>
-          <span {% if section == 'images' %} class="selected" {% endif %}>
-            <a href="#">Past Projects</a> -- Need link for Past Projects --
-          </span>
-        </div>
-      </div>
-      <div class="level-item has-text-centered">
-        <div>
-          <span {% if section == 'people' %} class="selected" {% endif %}>
-            <a href="#">Current Projects</a> -- Need link for Current Projects --
-          </span> 
-        </div>
-      </div>
-      {% endif %} 
-      <div class="level-item has-text-centered" >
-        <div class="buttons is-small is-responsive"> 
-          {% if request.user.is_authenticated %}
-        Hello {{ request.user.first_name|default:request.user.username }}, &nbsp;
-        <a class="button is-primary" href="{% url 'logout' %}">Logout<i class="fa-duotone fa-arrow-up-left-from-circle ml-2"></i></a>
-      {% else %}
-        <a class="button is-light" href="{% url 'login' %}">Log-in<i class="fa-duotone fa-right-from-bracket ml-2"></i></a>
-      {% endif %}
-        </a> 
-      </div>
-      </div>
-    </nav> -->
+
       
     {% block header %}
     {% block back-style %}<!---<section class= "section is-medium" ---->{% endblock back-style %} 
