@@ -26,7 +26,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-7ppocbnx@w71dcuinn*t^_mzal
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['papermasters.azurewebsites.net', 'papermasters.com', 'www.papermasters.com', '20.119.144.5']
+ALLOWED_HOSTS = ['papermasters.azurewebsites.net', 'https://www.papermasters.com', 'papermasters.com', 'www.papermasters.com', '20.119.144.5']
 
 if 'CODESPACE_NAME' in os.environ:
     CSRF_TRUSTED_ORIGINS = [f'https://{os.getenv("CODESPACE_NAME")}-8000.{os.getenv("GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN")}']
