@@ -3,7 +3,7 @@ import os
 
 
 
-ALLOWED_HOSTS = ['papermasters.com']
+ALLOWED_HOSTS = ['papermasters.com', 'www.papermasters.com']
 CSRF_TRUSTED_ORIGINS = ['https://papermasters.com']
 # Configure the domain name using the environment variable
 # that Azure automatically creates for us.
