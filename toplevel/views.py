@@ -3,8 +3,6 @@ from servicepages.models import Service
 from topic_pages.models import Category
 from resources.models import ResourceModel
 
-
-
 def prices(request):
     return render(request, 'toplevel/prices.html')  
 
