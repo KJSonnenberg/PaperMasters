@@ -8,11 +8,14 @@ from resources.models import ResourceModel
 def prices(request):
     return render(request, 'toplevel/prices.html')  
 
+def thank_you(request):
+    return render(request, 'toplevel/thank-you.html') 
+
 def terms_service(request):
     return render(request, 'toplevel/terms-service.html') 
 
 def return_policy(request):
-    return render(request, 'toplevel/terms-service.html') 
+    return render(request, 'toplevel/returns.html') 
 
 def contact(request):
     return render(request, 'toplevel/contact.html') 
