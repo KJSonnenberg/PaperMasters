@@ -8,6 +8,7 @@ app_name='toplevel'
 urlpatterns = [
     path('prices/', views.prices, name='prices'), 
     path('order/', views.order, name='order'), 
+    path('thank-you/', views.thank_you, name='thank_you'), 
     path('terms-service/', views.terms_service, name='terms_service'),
     path('return-policy/', views.return_policy, name='return_policy'),
     path('contact/', views.contact, name='contact'),
